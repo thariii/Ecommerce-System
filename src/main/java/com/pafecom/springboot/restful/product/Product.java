@@ -22,11 +22,14 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @SuppressWarnings("unused")
+	private String name;
 
-    private String description;
+    @SuppressWarnings("unused")
+	private String description;
 
-    private BigDecimal price;
+    @SuppressWarnings("unused")
+	private BigDecimal price;
 
     @CreationTimestamp
     private Date createdAt;
