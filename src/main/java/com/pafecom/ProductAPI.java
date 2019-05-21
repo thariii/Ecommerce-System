@@ -1,7 +1,9 @@
-package com.pafecom.springboot.restful.product;
+package com.pafecom;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +20,7 @@ import java.util.Optional;
 
 public class ProductAPI {
 	
+	@Autowired
 	private final ProductService productService = null;
 	public static Logger log;
 

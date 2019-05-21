@@ -1,19 +1,26 @@
-package com.pafecom.springboot.restful.product;
+package com.pafecom;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-
 @RequiredArgsConstructor
-
+@Service
 public class ProductService {
 	
-	private final ProductRespository productRespository = null;
+	private ProductRespository productRespository = null;
+	
+	@Autowired
+	public ProductService(ProductRespository productRespository){
+		this.productRespository=productRespository;
+	}
 
+	
     public List<Product> findAll() {
         return productRespository.findAll();
     }
@@ -28,6 +35,6 @@ public class ProductService {
 
     public void deleteById(Long id) {
         productRespository.deleteById(id);
-    }
+    }   
 
 }
